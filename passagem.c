@@ -16,7 +16,7 @@ struct no_passagem{
 		No_passagem* inicio;
 	
 };
-void menu (){
+void menu_passagem (){
 	
 	printf("       ESCOLHA A OPCAO   \n");
 	printf("======================================\n");
@@ -30,7 +30,18 @@ void menu (){
 	printf(" 8- sair\t\n");
 	
 }
-void mostrar(Lista)
+void reserva(reserva_de_onibus dado *r){
+
+	printf("Nome do cliente: ");
+	scanf(" %[^/n]",&r-> nome);
+	printf("Informe a Origem : ");
+	scanf(" %[^/n]", &r->origem);
+	printf("Informe o destino do cliente: ");
+	scanf(" %[^\n]", r->destino);
+    printf("Informe o numero do cliente: ");
+	scanf(" %d", r->numero);
+}
+
 
 
 
