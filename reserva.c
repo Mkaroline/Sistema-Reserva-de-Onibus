@@ -45,6 +45,7 @@ void reserva(reserva_de_onibus dado *r){
     printf("A passagem: ");
 	scanf(" %[^\n]", r->pasagem);
 }
+/*
 int excluir_reserva(reserva_de_onibus dado *r){	
 	 if (r == NULL){
 	return 1;
