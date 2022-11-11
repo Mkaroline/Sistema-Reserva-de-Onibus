@@ -1,7 +1,8 @@
-typedef struct no No;
-
+typedef struct oninus Onibus;
 typedef struct lista Lista;
 
-void tabela_reserva_de_onibus();
-void reserva(reserva_de_onibus dado *r);
-//Socorro, to com fome! 
+//função que cria uma lista vazia (NULL)
+Lista* lst_cria(void);
+Lista* l_insere(Lista* l);//lista para insire 
+int lst_vazia(Lista *l);//função que cria uma lista vazia (NULL)
+Lista* excluir(Lista* l, char* passagens);
