@@ -6,7 +6,7 @@
 struct onibus{//estrutura do onibus
 int numero;
 int vagas;	
-char origem[50];
+char origem[50]
 char destino[50];
 char passagens;
 };
