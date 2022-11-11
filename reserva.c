@@ -32,7 +32,7 @@ void tabela_reserva_de_onibus(){
 	printf(" 8- sair\t\n");	
 }
 
-void reserva(reserva_de_onibus dado *r){
+void reserva(reserva_de_onibus dado *r){  
 
 	printf("codigo do cliente: ");
 	scanf("%d",&r-> codigo);
