@@ -45,6 +45,14 @@ int lst_vazia(Lista *l){
 	return (l==NULL);
 }
 
+void lst_listar(Lista*l){
+
+	Lista*p;
+	for(p=l; p!=NULL; p=p->prox){
+		printf(" Info = %d \n", p->info);
+	}
+}
+
 Lista* lst_excluir(Lista* l, char* np){
 	Lista* ant = NULL;
 	Lista* p = l;
