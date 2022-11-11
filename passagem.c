@@ -3,7 +3,7 @@
 #include "passagem.h"
 struct passagem{
 	
-	char nome[100];
+	char nome [100];
 	char origem[100];
 	char destino[100];
     int numero_do_onibus;
@@ -41,6 +41,8 @@ void reserva(reserva_de_onibus dado *r){
     printf("Informe o numero do cliente: ");
 	scanf(" %d", r->numero);
 }
+// Raimundo passo aqui 
+// Raimundo fez commit 
 
 
 
