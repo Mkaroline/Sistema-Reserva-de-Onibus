@@ -1,49 +1,69 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <strings.h>
 #include "passagem.h"
-struct passagem{
-	
-	char nome [100];
-	char origem[100];
-	char destino[100];
-    int numero_do_onibus;
+
+struct passagens{
+	char np		[50];
+	char origem [50];
+	char destino[50];
+	int numero;	
 };
-struct no_passagem{
-	 passagem dado;
-	struct no_passagem *prox;
+
+struct lista{
+	passagens * info; 
+	struct lista * prox;
 };
-	struct lista_passagem {
-		No_passagem* inicio;
-	
-};
-void menu_passagem (){
-	
-	printf("       ESCOLHA A OPCAO   \n");
-	printf("======================================\n");
-	printf(" 1- realizar reservas\t\n");
-	printf(" 2- excluir reservas\t\n");
-    printf(" 3- listar reservas\t\n");
-   	printf(" 4- buscar reservas\t\n");
-    printf(" 5- editar reservas\t\n");
- 	printf(" 6- consultar vagas disponiveis para uma dada origem - destino\t\n");
-    printf(" 7- consultar quantitativo de passageiros\t\n");
-	printf(" 8- sair\t\n");
-	
+
+passagens* preenche(void){
+	Passagens* p = (Passagens*)malloc(sizeof(Passagens));
+	printf("nome do passageiro:\n");
+	scanf(" %[^\n]", p->np);
+	printf("origem do passageiro:\n");
+	scanf(" %[^\n]", p->origem);
+	printf("destino do passageiro:\n");
+	scanf(" %[^\n]", p->destino);
+	printf("numero do onibus);
+	scanf("%d", &p->numero);
+return p;
 }
-void reserva(reserva_de_onibus dado *r){
 
-	printf("Nome do cliente: ");
-	scanf(" %[^/n]",&r-> nome);
-	printf("Informe a Origem : ");
-	scanf(" %[^/n]", &r->origem);
-	printf("Informe o destino do cliente: ");
-	scanf(" %[^\n]", r->destino);
-    printf("Informe o numero do cliente: ");
-	scanf(" %d", r->numero);
+Lista* lst_cria(void){
+	return NULL;
 }
-// Raimundo passo aqui 
-// Raimundo fez commit 
 
+Lista* insere(Lista* l){
+	Passagens* p = preenche(){
+	Lista* novo = (Lista*)malloc(sizeof(Lista));
+	novo -> info = p;
+	nova -> prox = l;
+	}
+return novo;
+}
 
+int lst_vazia(Lista *l){
+	return (l==NULL);
+}
 
-
+Lista* excluir(Lista* l, char* np){
+	Lista* ant = NULL;
+	Lista* p = l;
+	
+		while (strcmp(np, p->info->np != 0)){
+			if(p == NULL){
+				return l;
+			}
+			ant = p;
+			p = p->prox;
+		}
+		if(ant == NULL){
+			l = p-> prox;
+		}
+		else
+		{
+			ant->prox = p-> prox;
+		}
+	free(p);
+	
+	return l;		
+}
