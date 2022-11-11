@@ -41,8 +41,6 @@ void reserva(reserva_de_onibus dado *r){
     printf("Informe o numero do cliente: ");
 	scanf(" %d", r->numero);
 }
-// Raimundo passo aqui 
-// Raimundo fez commit 
 
 
 
