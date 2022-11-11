@@ -1,71 +1,80 @@
-#include <stdio.h>
+#include<stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "reserva.h"
 
-struct reserva_de_onibus{//estrutura reserva de onubus onde tem o codigo
-	//vagas, origem, destino, passagem do cliente;
-	int codigo;
-	int vagas;
-	char origem[100];
-	char destino[100];
-	char passagem[100];
-};
-struct no{
-	reserva_de_onibus dado;
-	struct no*prox;
-	};
-	struct lista{
-		no* inicio;
+struct onibus{//estrutura do onibus
+int numero;
+int vagas;	
+char origem[50]
+char destino[50];
+char passagens;
 };
 
-void tabela_reserva_de_onibus(){
-	
-	printf("       ESCOLHA A OPCAO   \n");
-	printf("======================================\n");
-	printf("  1- realizar reservas\t\n");
-	printf(" 2- excluir reservas\t\n");
-    printf(" 3- listar reservas\t\n");
-   	printf(" 4- buscar reservas\t\n");
-    printf(" 5- editar reservas\t\n");
- 	printf(" 6- consultar vagas disponiveis para uma dada origem - destino\t\n");
-    printf(" 7- consultar quantitativo de passageiros\t\n");
-	printf(" 8- sair\t\n");	
-}
+typedef struct lista{//estrutura do no ou seja com as informacoes
+	Lista dado;
+	struct no *prox;
+};
+struct lista{//estrutura da lista
+	No*inicio;
+};
 
-void reserva(reserva_de_onibus dado *r){
-
-	printf("codigo do cliente: ");
-	scanf("%d",&r-> codigo);
-	printf("A vaga que deseja: ");
-	scanf("%d", &r->vagas);
+ onibus * preenche(void){
+Onibus* r = (Onibus*)malloc(sizeof(Onibus));
+ 
+    printf("Codigo do Onibus: ");
+ 	scanf(" %d",&r -> codigo);
+	printf("A quantidade de vagas que tem no onibus: ");
+	scanf(" %d", &r -> vagas);
 	printf("A origem do cliente: ");
-	scanf(" %[^\n]", r->origem);
+	scanf(" %[^\n]", r-> origem);
     printf("O destino do cliente: ");
-	scanf(" %[^\n]", r->destino);
-    printf("A passagem: ");
-	scanf(" %[^\n]", r->pasagem);
-}
-/*
-int excluir_reserva(reserva_de_onibus dado *r){	
-	 if (r == NULL){
-	return 1;
-  }else {
-	return 0;
-  }
+	scanf(" %[^\n]", r-> destino);
+    printf("O valor da passagens: ");
+	scanf(" %[^\n]", r-> passagens);
 }
 
-void listar_reservas(reserva_de_onibus dado *r){
+Lista* lst_cria(void){//cria uma lista onde nao retorna nada
+	return NULL;
 }
-void buscar_reservas(reserva_de_onibus dado *r){
-	No*busca(Lista lista, int cod){
-	for (p1 = p -> inici; p1 != NULL && p1-> dado.codigo != cod; p1 = p1->NULL){
-		return p1;
+
+Lista *l_inserir(Lista *l){
+	Onibus* r = l_ensere(){
+	 Lista *novo = (Lista*)malloc(sizeof(Lista));
+	 novo -> dado = r;
+	 novo -> prox = l;
 	}
+	 return novo;
 }
+
+int lst_vazia(Lista *l){
+	return (l==NULL);
 }
-void editar_reservas(reserva_de_onibus dado *r){
-}
-void consultar_vagas_disponiveis(reserva_de_onibus dado *r){
-}
-void consultar_quantitativo_de_passageiros(reserva_de_onibus dado *r){
-}
+
+
+int excluir_reserva(Lista *l, int r){//funcao de excluir que receber no prototipo uma lista e uma variavel
+//primeiramente precisamos percorrer a lista e buscar o elemento que sera eliminado
+    Lista *a = NULL;//ponteiro que serva para elemento anteriore 
+	Lista *p =l;//ponteiro p que serve para percorrer o elemento da lista 
+
+	
+	while(strcmp(passagens,p -> dado-> passagens!= 0)){//desse caso ele ira procurar o elemento na lista e ja guardaando o anterior
+		//o valor do no em que p passou o endereco se ele for diferente de r o laco vai continuar
+	//desse modo ele so parar quando o elemento for encontrado.
+	if ( p== NULL)
+ 	     return l; /* nao achou: retorna lista original */
+        a = p;
+        p = p->prox;//sera verificar se achou 
+	}
+	 if (a== NULL){//retira elemento do inicio
+	 	l = p -> prox;
+	  
+	 }else{
+	 	a -> prox = p -> prox;//caso nem das alternativa anteriores nao forem conrespondida,
+	 	//sera retirado elemento do meio da lista 
+	 }
+  	free(p);//liberar espaco na memoria
+  	
+	return l;
+  }
+  
