@@ -3,6 +3,7 @@
 #include <stdarg.h>
 #include <windows.h>
 #include "Onibus.h"
+#include "Passagens.h"
 
 #define TITULO_OPCAO1 "Realizar reservas"
 #define TITULO_OPCAO2 "Excluir reservas"
