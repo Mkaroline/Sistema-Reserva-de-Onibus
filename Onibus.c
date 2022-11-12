@@ -12,7 +12,7 @@ char passagens[50];
 };
 
 struct lista{//estrutura do no ou seja com as informacoes
-	Onibus dado;
+	onibus dado;
 	struct Lista *prox;
 };
 
@@ -97,6 +97,5 @@ Lista * l_busca(int elem, Lista* l){//funcao buscara o elemento
 	return NULL;
 
 }
-
 
   

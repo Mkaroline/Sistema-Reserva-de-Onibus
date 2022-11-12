@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
-#include "passagem.h"
+#include "passagens.h"
 
 struct passagens{
 	char np		[50];
@@ -32,7 +32,7 @@ Lista* lst_cria(void){
 	return NULL;
 }
 
-Lista* insere(Lista* l){
+Lista* lst_insere(Lista* l){
 	Passagens* p = preenche(){
 	Lista* novo = (Lista*)malloc(sizeof(Lista));
 	novo -> info = p;
@@ -45,7 +45,15 @@ int lst_vazia(Lista *l){
 	return (l==NULL);
 }
 
-Lista* excluir(Lista* l, char* np){
+void lst_listar(Lista*l){
+
+	Lista*p;
+	for(p=l; p!=NULL; p=p->prox){
+		printf(" Info = %d \n", p->info);
+	}
+}
+
+Lista* lst_excluir(Lista* l, char* np){
 	Lista* ant = NULL;
 	Lista* p = l;
 	
@@ -64,6 +72,5 @@ Lista* excluir(Lista* l, char* np){
 			ant->prox = p-> prox;
 		}
 	free(p);
-	
 	return l;		
 }
