@@ -94,8 +94,8 @@ Lista * l_busca(int elem, Lista* l){//funcao buscara o elemento
 			return p;
 	}
 
+	
 	return NULL;
 
 }
-
   
