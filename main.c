@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <windows.h>
+#include "Onibus.h"
+#include "Passagens.h"
 
 
 #define TITULO_OPCAO1 "Realizar reservas"
