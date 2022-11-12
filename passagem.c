@@ -36,7 +36,7 @@ Lista* lst_insere(Lista* l){
 	Passagem* p = preenche(){
 	Lista* novo = (Lista*)malloc(sizeof(Lista));
 	novo -> info = p;
-	nova -> prox = l;
+	novo -> prox = l;
 	}
 return novo;
 }
@@ -46,7 +46,6 @@ int lst_vazia(Lista *l){
 }
 
 void lst_listar(Lista*l){
-
 	Lista*p;
 	for(p=l; p!=NULL; p=p->prox){
 		printf(" Info = %d \n", p->info);

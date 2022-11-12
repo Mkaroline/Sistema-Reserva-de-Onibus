@@ -1,9 +1,10 @@
 typedef struct passagem Passagem;
 typedef  struct lista Lista;
 
-passagem* preenche(void);
+Passagem* preenche(void);
 Lista* lst_cria(void);
 Lista* lst_insere(Lista* l);
 int lst_vazia(Lista *l);
 void lst_listar(Lista*l);
 Lista* lst_excluir(Lista* l, char* np);
+Lista * lst_busca ( int numero, Lista * l);
