@@ -8,4 +8,5 @@ int lst_vazia(Lista *l);//função que cria uma lista vazia (NULL)
 Lista* excluir(Lista* l, char* destino);
 
 
+
  
