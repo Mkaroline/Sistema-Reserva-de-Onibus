@@ -3,7 +3,7 @@
 #include <string.h>
 #include "onibus.h"
 
-struct onibus{//estrutura do onibus
+struct onibus {//estrutura do onibus
 int numero;
 int vagas;	
 char origem[50];
@@ -37,6 +37,7 @@ Lista* lst_cria(void){//cria uma lista onde nao retorna nada
 }
 
 Lista *l_inserir(Lista *l){
+	
 	Onibus* r = l_ensere(){
 	 Lista *novo = (Lista*)malloc(sizeof(Lista));
 	 novo -> dado = r;
@@ -50,14 +51,14 @@ int lst_vazia(Lista *l){
 }
 
 
-Lista * l_excluir(Lista *l, int r){//funcao de excluir que receber no prototipo uma lista e uma variavel
+Lista * l_excluir(Lista *l, int codigo){//funcao de excluir que receber no prototipo uma lista e uma variavel
 //primeiramente precisamos percorrer a lista e buscar o elemento que sera eliminado
 
     Lista *a = NULL;//ponteiro que serva para elemento anteriore 
 	Lista *p =l;//ponteiro p que serve para percorrer o elemento da lista 
 
 	     //analisar esse ponto while(strcmp(,p -> dado->!= 0));
-	while(strcmp(distino,p -> dado->destino!= 0)){
+	while(codigo,p -> dado->codigo!= 0){
 		//desse caso ele ira procurar o elemento na lista e ja guardaando o anterior
 		//o valor do no em que p passou o endereco se ele for diferente de r o laco vai continuar
 	//desse modo ele so parar quando o elemento for encontrado.
@@ -78,24 +79,4 @@ Lista * l_excluir(Lista *l, int r){//funcao de excluir que receber no prototipo 
 	return l;
   }
 
-   void l_listar(Lista*l){//imprimir as informacoes dado pelo usuarios
-	Lista*p;//ponteiro p que 
-	
-	for(p=l; p!=NULL; p=p->prox){
-		printf(" dado = %d \n", p->dado);
-	}
-
-}
-
-Lista * l_busca(int elem, Lista* l){//funcao buscara o elemento
-	Lista * p;
-	for(p=l; p!=NULL; p=p->prox){
-		if(p->dado ==elem)
-			return p;
-	}
-
-	
-	return NULL;
-
-}
   
