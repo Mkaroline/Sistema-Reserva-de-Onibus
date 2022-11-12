@@ -16,7 +16,7 @@ struct lista{
 };
 
 Passagens* preenche(void){
-	Passagem* p = (Passagem*)malloc(sizeof(Passagem));
+	Passagens* p = (Passagens*)malloc(sizeof(Passagens));
 	printf("nome do passageiro:\n");
 	scanf(" %[^\n]", p->np);
 	printf("origem do passageiro:\n");
@@ -33,7 +33,7 @@ Lista* lst_cria(void){
 }
 
 Lista* lst_insere(Lista* l){
-	Passagem* p = preenche(){
+	Passagens* p = preenche(){
 	Lista* novo = (Lista*)malloc(sizeof(Lista));
 	novo -> info = p;
 	novo -> prox = l;
@@ -69,9 +69,7 @@ Lista* lst_excluir(Lista* l, char* np){
 		else
 		{
 			ant->prox = p-> prox;
-		}
-		
+		}	
 	free(p);
-
 	return l;		
 }
