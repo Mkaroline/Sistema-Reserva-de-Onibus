@@ -11,19 +11,19 @@ struct passagens{
 };
 
 struct lista{
-	passagens * info; 
+	Passagem* info; 
 	struct lista * prox;
 };
 
-passagens* preenche(void){
-	Passagens* p = (Passagens*)malloc(sizeof(Passagens));
+Passagens* preenche(void){
+	Passagem* p = (Passagem*)malloc(sizeof(Passagem));
 	printf("nome do passageiro:\n");
 	scanf(" %[^\n]", p->np);
 	printf("origem do passageiro:\n");
 	scanf(" %[^\n]", p->origem);
 	printf("destino do passageiro:\n");
 	scanf(" %[^\n]", p->destino);
-	printf("numero do onibus);
+	printf("numero do onibus");
 	scanf("%d", &p->numero);
 return p;
 }
@@ -33,10 +33,10 @@ Lista* lst_cria(void){
 }
 
 Lista* lst_insere(Lista* l){
-	Passagens* p = preenche(){
+	Passagem* p = preenche(){
 	Lista* novo = (Lista*)malloc(sizeof(Lista));
 	novo -> info = p;
-	nova -> prox = l;
+	novo -> prox = l;
 	}
 return novo;
 }
@@ -46,7 +46,6 @@ int lst_vazia(Lista *l){
 }
 
 void lst_listar(Lista*l){
-
 	Lista*p;
 	for(p=l; p!=NULL; p=p->prox){
 		printf(" Info = %d \n", p->info);
@@ -71,6 +70,8 @@ Lista* lst_excluir(Lista* l, char* np){
 		{
 			ant->prox = p-> prox;
 		}
+		
 	free(p);
+
 	return l;		
 }
