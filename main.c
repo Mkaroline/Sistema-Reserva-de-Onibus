@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <windows.h>
+#include "Onibus.h"
+#include "passagens.h" 
 
 
 #define TITULO_OPCAO1 "Realizar reservas"
@@ -10,7 +12,7 @@
 #define TITULO_OPCAO4 "Buscar reservas"
 #define TITULO_OPCAO5 "Editar reservas"
 #define TITULO_OPCAO6 "Consultar vagas disponiveis para uma dada origem - Destino"
-#define TITULO_OPCAO7 "Consultar quantitativo de passageiros "
+#define TITULO_OPCAO7 "Consultar quantitativo de passageiros"
 #define TITULO_OPCAO8 "Saida do programa"
 
 
@@ -100,7 +102,7 @@ int main(void) {
             case OPCAO1:
                  Beep(1000,500);
                  //fazer chamada da funcao que realizar a recerva
-                   preenche();
+                 preenche();
                  preenche();
                 
 				 break;
