@@ -45,13 +45,6 @@ int lst_vazia(Lista *l){
 	return (l==NULL);
 }
 
-void lst_listar(Lista*l){
-	Lista*p;
-	for(p=l; p!=NULL; p=p->prox){
-		printf(" Info = %d \n", p->info);
-	}
-}
-
 Lista* lst_excluir(Lista* l, char* np){
 	Lista* ant = NULL;
 	Lista* p = l;
@@ -72,4 +65,20 @@ Lista* lst_excluir(Lista* l, char* np){
 		}	
 	free(p);
 	return l;		
+}
+
+void lst_listar(Lista*l){
+	Lista*p;
+	for(p=l; p!=NULL; p=p->prox){
+		printf(" Info = %d \n", p->info);
+	}
+}
+
+Lista * lst_busca ( int e, Lista * l){
+	Lista * p;
+	for (p=l; p!= NULL ; p=p-> prox ){
+		if (p-> info == e)
+			retornar p;
+	}
+	return NULL ;
 }
