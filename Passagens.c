@@ -11,7 +11,7 @@ struct passagens{
 };
 
 struct lista{
-	Passagem* info; 
+	Passagens* info; 
 	struct lista * prox;
 };
 
