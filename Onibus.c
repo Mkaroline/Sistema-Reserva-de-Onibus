@@ -1,34 +1,32 @@
 #include<stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "reserva.h"
+#include "onibus.h"
 
 struct onibus{//estrutura do onibus
 int numero;
 int vagas;	
-char origem[50]
+char origem[50];
 char destino[50];
-char passagens;
+char passagens[50];
 };
 
-typedef struct lista{//estrutura do no ou seja com as informacoes
-	Lista dado;
-	struct no *prox;
-};
-struct lista{//estrutura da lista
-	No*inicio;
+struct lista{//estrutura do no ou seja com as informacoes
+	onibus dado;
+	struct Lista *prox;
 };
 
  onibus * preenche(void){
+
 Onibus* r = (Onibus*)malloc(sizeof(Onibus));
  
     printf("Codigo do Onibus: ");
- 	scanf(" %d",&r -> codigo);
-	printf("A quantidade de vagas que tem no onibus: ");
+ 	scanf(" %d",& r -> codigo);
+	printf("A quantidade de Vagas que tem no Onibus: ");
 	scanf(" %d", &r -> vagas);
-	printf("A origem do cliente: ");
+	printf("Digite a origem do Cliente: ");
 	scanf(" %[^\n]", r-> origem);
-    printf("O destino do cliente: ");
+    printf("Digite o destino do Cliente: ");
 	scanf(" %[^\n]", r-> destino);
     printf("O valor da passagens: ");
 	scanf(" %[^\n]", r-> passagens);
@@ -52,13 +50,15 @@ int lst_vazia(Lista *l){
 }
 
 
-int excluir_reserva(Lista *l, int r){//funcao de excluir que receber no prototipo uma lista e uma variavel
+Lista * l_excluir(Lista *l, int r){//funcao de excluir que receber no prototipo uma lista e uma variavel
 //primeiramente precisamos percorrer a lista e buscar o elemento que sera eliminado
+
     Lista *a = NULL;//ponteiro que serva para elemento anteriore 
 	Lista *p =l;//ponteiro p que serve para percorrer o elemento da lista 
 
-	
-	while(strcmp(passagens,p -> dado-> passagens!= 0)){//desse caso ele ira procurar o elemento na lista e ja guardaando o anterior
+	     //analisar esse ponto while(strcmp(,p -> dado->!= 0));
+	while(strcmp(distino,p -> dado->destino!= 0)){
+		//desse caso ele ira procurar o elemento na lista e ja guardaando o anterior
 		//o valor do no em que p passou o endereco se ele for diferente de r o laco vai continuar
 	//desse modo ele so parar quando o elemento for encontrado.
 	if ( p== NULL)
@@ -77,4 +77,25 @@ int excluir_reserva(Lista *l, int r){//funcao de excluir que receber no prototip
   	
 	return l;
   }
+
+   void l_listar(Lista*l){//imprimir as informacoes dado pelo usuarios
+	Lista*p;//ponteiro p que 
+	
+	for(p=l; p!=NULL; p=p->prox){
+		printf(" dado = %d \n", p->dado);
+	}
+
+}
+
+Lista * l_busca(int elem, Lista* l){//funcao buscara o elemento
+	Lista * p;
+	for(p=l; p!=NULL; p=p->prox){
+		if(p->dado ==elem)
+			return p;
+	}
+
+	
+	return NULL;
+
+}
   

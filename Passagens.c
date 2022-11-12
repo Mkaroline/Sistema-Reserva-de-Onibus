@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
-#include "passagem.h"
+#include "passagens.h"
 
-struct passagem{
+struct passagens{
 	char np		[50];
 	char origem [50];
 	char destino[50];
@@ -15,7 +15,7 @@ struct lista{
 	struct lista * prox;
 };
 
-Passagem* preenche(void){
+Passagens* preenche(void){
 	Passagem* p = (Passagem*)malloc(sizeof(Passagem));
 	printf("nome do passageiro:\n");
 	scanf(" %[^\n]", p->np);
@@ -70,15 +70,8 @@ Lista* lst_excluir(Lista* l, char* np){
 		{
 			ant->prox = p-> prox;
 		}
+		
 	free(p);
-	return l;		
-}
 
-Lista * lst_busca ( int numero, Lista * l){
-	Lista * p;
-	for (p=l; p!= NULL ; p=p-> prox ){
-		if (p-> info == numero)
-			return p;
-	}
-	return  NULL ;
+	return l;		
 }

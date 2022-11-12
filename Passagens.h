@@ -1,4 +1,4 @@
-typedef struct passagem Passagem;
+typedef struct passagens Passagens;
 typedef  struct lista Lista;
 
 Passagem* preenche(void);
