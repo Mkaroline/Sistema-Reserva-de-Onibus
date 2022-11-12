@@ -1,7 +1,7 @@
-typedef struct passagens Passagens;
+typedef struct passagem Passagem;
 typedef  struct lista Lista;
 
-passagens* preenche(void);
+passagem* preenche(void);
 Lista* lst_cria(void);
 Lista* lst_insere(Lista* l);
 int lst_vazia(Lista *l);
