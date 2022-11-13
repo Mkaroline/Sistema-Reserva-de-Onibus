@@ -30,6 +30,8 @@ Onibus* r = (Onibus*)malloc(sizeof(Onibus));
 	scanf(" %[^\n]", r-> destino);
     printf("O valor da passagens: ");
 	scanf(" %[^\n]", r-> passagens);
+
+	return r;
 }
 
 Lista* lst_cria(void){//cria uma lista onde nao retorna nada
