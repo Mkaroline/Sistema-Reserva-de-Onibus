@@ -17,8 +17,11 @@ struct lista{//estrutura do no ou seja com as informacoes
 };
 
 onibus* preenche(void){
-Onibus* r = (Onibus*)malloc(sizeof(Onibus));
- 
+Onibus* r = (Onibus*)malloc(sizeof(Onibus));//alocar a memoria 
+ if (r == NULL){
+	printf("Erro alocar a memoria \n");
+	exit (1);
+ }
     printf("Codigo do Onibus: ");
  	scanf(" %d",& r -> codigo);
 	printf("A quantidade de Vagas que tem no Onibus: ");
@@ -27,10 +30,10 @@ Onibus* r = (Onibus*)malloc(sizeof(Onibus));
 	scanf(" %[^\n]", r-> origem);
     printf("Digite o destino do Cliente: ");
 	scanf(" %[^\n]", r-> destino);
-    printf("O valor da passagens: ");
+    printf("Informe a passagens: ");
 	scanf(" %[^\n]", r-> passagens);
 
-	return r;
+	return r;//retornar r
 }
 
 Lista* lst_cria(void){//cria uma lista onde nao retorna nada
@@ -40,14 +43,14 @@ Lista* lst_cria(void){//cria uma lista onde nao retorna nada
 Lista *l_inserir(Lista *l){
 
 	Onibus* r = l_ensere(){
-	 Lista *novo = (Lista*)malloc(sizeof(Lista));
-	 novo -> dado = r;
-	 novo -> prox = l;
+	 Lista *novo = (Lista*)malloc(sizeof(Lista));//alocar dinamicamente a lista
+	 novo -> dado = r;//novo acessa os dado onde r receberar
+	 novo -> prox = l;//novo acessa proximp onde l receberar
 	}
-	 return novo;
+	 return novo;//retorna novo
 }
 
-int lst_vazia(Lista *l){
+int lst_vazia(Lista *l){//lista  vazia
 	return (l==NULL);
 }
 
@@ -83,7 +86,7 @@ Lista * l_excluir(Lista *l, int codigo){//funcao de excluir que receber no proto
 void l_listar(Lista*l){//imprimir as informacoes dado pelo usuarios
 	Lista*p;//variavel auxiliar para percorrer a lista 
 	
-	for(p=l; p!=NULL; p=p->prox){//vai percorre enquanto p foi igua a l
+	for(p=l; p!=NULL; p=p->prox){//vai percorrer enquanto p foi igua a l
 		//e o p for de deferente de NULL p vai acessa o proximo elemento.
 		printf("Dado = %d \n", p->dado);
 	}
