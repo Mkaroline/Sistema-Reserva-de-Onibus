@@ -101,8 +101,8 @@ int main(void) {
             case OPCAO1:
                  Beep(1000,500);
                  //fazer chamada da funcao que realizar a recerva
-                 preenche();
-                 preenche();
+                Onibus *r = preenche();
+                Passagens * p = preenche();
                 
 				 break;
             
