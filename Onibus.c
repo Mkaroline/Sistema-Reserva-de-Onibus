@@ -103,7 +103,8 @@ Lista *l_buscar(Lista *l, int elem){
 	return NULL;//caso nao achar o elemento
 }
 Lista *l_editar(Lista *l){
- 
+  
+         
 }
 
 
