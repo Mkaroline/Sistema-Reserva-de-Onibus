@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <windows.h>
-#include "Onibus.h"
-#include "Passagens.h"
+#include "Onibus.c"
+#include "Passagens.c"
 
 #define TITULO_OPCAO1 "Realizar reservas"
 #define TITULO_OPCAO2 "Excluir reservas"
@@ -89,6 +89,8 @@ void ApresentaMenu(int nItens, int menorOpcao, ...) {
 int main(void) {
     unsigned char op;//variavel para armazenar a opcao digitada pelo usuario
     unsigned int saida = 0;
+     No * lista_de_onibus = l_cria();
+     Lista * passagens_de_onibus = lst_cria();
 
     do {
         ApresentaMenu(N_OPCOES, OPCAO1,
@@ -100,25 +102,29 @@ int main(void) {
 		switch(op) {
             case OPCAO1:
                  Beep(1000,500);
-                 //fazer chamada da funcao que realizar a recerva
-                Onibus  *r = preenche();
-                Passagens *p = preenche();
-                
+                 //fazer chamada da funcao que realizar a reserva
+                lista_de_onibus = l_insere(lista_de_onibus);
+                passagens_de_onibus =  lst_insere(passaagens_de_onibus);
 				 break;
             
             case OPCAO2:
               Beep(1000,500);
-                //cha amada da funcao que remo
+                //chaamada da funcao que remo
+                //No * no_1 = l_excluir(l, codigo);
+                //Lista* lista_1 = lst_excluir(l,  np);
                 break;
 
             case OPCAO3:
                 Beep(1000,500);
                 //listar reserva
+                // l_listar(l);
+                // lst_listar(l);
                 break;
                 
             case OPCAO4:
                 Beep(1000,500);
                 //buscar reservas
+                //No *l_buscar(l, int elem)
                 break;
             case OPCAO5:
                 Beep(1000,500);

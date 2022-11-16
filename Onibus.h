@@ -1,15 +1,13 @@
-typedef struct oninus Onibus;
-typedef struct lista Lista;
-
-//função que cria uma lista vazia (NULL)
- onibus * preenche();
-Lista* lst_cria(void);
-Lista* l_insere(Lista* l);//lista para insire 
-int lst_vazia(Lista *l);//função que cria uma lista vazia (NULL)
-Lista* excluir(Lista* l, int codigo);
-void l_listar(Lista*l);
-Lista *l_buscar(Lista *l, int elem);
+typedef struct onibus Onibus;
+typedef struct no No;
 
 
+Onibus* realizar(void);
+No* l_cria(void);
+No* l_insere(No* l);
+int l_vazia(No *l);
+No* l_excluir(No* l, int codigo);
+void l_listar(No *l);
+No *l_buscar(No *l, int elem);
 
- 
+
