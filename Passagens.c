@@ -7,12 +7,11 @@ struct passagens{
 	char np		[50];
 	char origem [50];
 	char destino[50];
-	int numero;	
+	int numero;
 };
-
 struct lista{
-	Passagens* info; 
-	struct lista * prox;
+	Passagens* info;
+	struct Lista * prox;
 };
 
 Passagens* preenche(void){
@@ -33,7 +32,7 @@ Lista* lst_cria(void){
 }
 
 Lista* lst_insere(Lista* l){
-	Passagens* p = preenche(){
+	Passagens* p = preenche();{
 	Lista* novo = (Lista*)malloc(sizeof(Lista));
 	novo -> info = p;
 	novo -> prox = l;
@@ -48,7 +47,7 @@ int lst_vazia(Lista *l){
 Lista* lst_excluir(Lista* l, char* np){
 	Lista* ant = NULL;
 	Lista* p = l;
-	
+
 		while (strcmp(np, p->info->np != 0)){
 			if(p == NULL){
 				return l;
@@ -62,9 +61,9 @@ Lista* lst_excluir(Lista* l, char* np){
 		else
 		{
 			ant->prox = p-> prox;
-		}	
+		}
 	free(p);
-	return l;		
+	return l;
 }
 
 void lst_listar(Lista*l){
