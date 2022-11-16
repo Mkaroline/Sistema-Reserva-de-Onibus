@@ -91,7 +91,8 @@ int main(void) {
     unsigned int saida = 0;
      No * lista_de_onibus = l_cria();
      Lista * passagens_de_onibus = lst_cria();
-
+     int cod;
+     char nomep [50];
     do {
         ApresentaMenu(N_OPCOES, OPCAO1,
                       TITULO_OPCAO1, TITULO_OPCAO2,
@@ -104,14 +105,18 @@ int main(void) {
                  Beep(1000,500);
                  //fazer chamada da funcao que realizar a reserva
                 lista_de_onibus = l_insere(lista_de_onibus);
-                passagens_de_onibus =  lst_insere(passaagens_de_onibus);
+                passagens_de_onibus =  lst_insere(passagens_de_onibus);
 				 break;
             
             case OPCAO2:
               Beep(1000,500);
                 //chaamada da funcao que remo
-                //No * no_1 = l_excluir(l, codigo);
-                //Lista* lista_1 = lst_excluir(l,  np);
+                printf("Digite o codigo do onibus que deseja excluir\n");
+                scanf("%d", &cod);
+                 lista_de_onibus = l_excluir(lista_de_onibus, cod);
+                printf("Digite o nome do passageiro que deseja excluir\n");
+                scanf(" %[^\n]", nomep);
+                passagens_de_onibus= lst_excluir(passagens_de_onibus,  nomep);
                 break;
 
             case OPCAO3:

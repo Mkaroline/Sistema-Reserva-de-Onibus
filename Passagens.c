@@ -72,7 +72,7 @@ Lista* lst_excluir(Lista* l, char* np){
 void lst_listar(Lista*l){
 	Lista*p;
 	for(p=l; p!=NULL; p=p->prox){
-		printf(" Info = %d \n", p->info);
+		printf(" Info = %d \n", p->info->numero);
 	}
 }
 
@@ -85,7 +85,7 @@ Lista * lst_busca ( int e, Lista * l){
 	return NULL ;
 }
 
-void lst_editar(Lista *l, int numero, char np[]){
+/*void lst_editar(Lista *l, int numero, char np[]){
 	struct lista* p = pesquisar(*l, numero);
 	if(p == NULL){
 		printf("A informacao nao pode ser alterado\n");
@@ -93,4 +93,4 @@ void lst_editar(Lista *l, int numero, char np[]){
 	else{
 		strcpy(p->info->np,np);
 	}
-}
+}*/

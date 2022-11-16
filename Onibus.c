@@ -63,7 +63,7 @@ No * l_excluir(No *l, int codigo){//funcao de excluir que receber no prototipo u
     No *a = NULL;//ponteiro que serva para elemento anteriore
 	No *p = l;//ponteiro p que serve para percorrer o elemento da lista
 
-	while(codigo,p -> dado->codigo != 0){
+	while(p -> dado->codigo != codigo){
 		//desse caso ele ira procurar o elemento na lista e ja guardaando o anterior
 		//o valor do no em que p passou o endereco se ele for diferente de r o laco vai continuar
 	//desse modo ele so parar quando o elemento for encontrado.
