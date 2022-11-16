@@ -16,25 +16,26 @@ struct lista{//estrutura do no ou seja com as informacoes
 	struct Lista *prox;
 };
 
-onibus* preenche(void){
+Onibus* preenche(void){
 Onibus* r = (Onibus*)malloc(sizeof(Onibus));//alocar a memoria 
  if (r == NULL){
 	printf("Erro alocar a memoria \n");
 	exit (1);
  }
     printf("Codigo do Onibus: ");
- 	scanf(" %d",& r -> codigo);
+ 	scanf(" %d", &r->codigo);
 	printf("A quantidade de Vagas que tem no Onibus: ");
-	scanf(" %d", &r -> vagas);
+	scanf(" %d", &r->vagas);
 	printf("Digite a origem do Cliente: ");
-	scanf(" %[^\n]", r-> origem);
+	scanf(" %[^\n]", r->origem);
     printf("Digite o destino do Cliente: ");
-	scanf(" %[^\n]", r-> destino);
+	scanf(" %[^\n]", r->destino);
     printf("Informe a passagens: ");
-	scanf(" %[^\n]", r-> passagens);
+	scanf(" %[^\n]", r->passagens);
 
 	return r;//retornar r
 }
+
 
 Lista* lst_cria(void){//cria uma lista onde nao retorna nada
 	return NULL;
@@ -82,13 +83,14 @@ Lista * l_excluir(Lista *l, int codigo){//funcao de excluir que receber no proto
 	return l;
   }
 
-//funcao que pecorre os elementos da lista 
-void l_listar(Lista*l){//imprimir as informacoes dado pelo usuarios
+//funcao que pecorrer os elementos da lista 
+void l_listar(Lista *l){//imprimir as informacoes dado pelo usuarios
 	Lista*p;//variavel auxiliar para percorrer a lista 
 	
-	for(p=l; p!=NULL; p=p->prox){//vai percorrer enquanto p foi igua a l
-		//e o p for de deferente de NULL p vai acessa o proximo elemento.
-		printf("Dado = %d \n", p->dado);
+	//percorrer a lista 
+	for(p=l; p!=NULL; p=p->prox){//p eh o primeiro elemento da lista , enquanto 
+//p for difernete e igaula NULL, p aponta para o proximo elemento da lista
+		printf("Dado = %d \n", p->dado);//onde pode acessar a informacao 
 	}
 }
 
@@ -96,14 +98,14 @@ void l_listar(Lista*l){//imprimir as informacoes dado pelo usuarios
 Lista *l_buscar(Lista *l, int elem){
 	Lista *p;//varavel auxiliar para percorrer a lista 
 	for(p = l; p!=NULL; p=p->prox){//se p for igual a l entao verifica se p for diferente de NULL entao p acessa o proximo elemento da lista
-		if(p-> dado == elem){// p acessa o dado onde vai ser igual ao elemneto da lista 
+		if(p-> dado == elem){// verificando se dado vai ser igual a elemento
 			return p;//retorna p
 		}
 	}
 	return NULL;//caso nao achar o elemento
 }
 Lista *l_editar(Lista *l){
-  
+
          
 }
 
