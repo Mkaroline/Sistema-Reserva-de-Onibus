@@ -84,3 +84,13 @@ Lista * lst_busca ( int e, Lista * l){
 	}
 	return NULL ;
 }
+
+void lst_editar(Lista *l, int numero, char np[]){
+	struct lista* p = pesquisar(*l, numero);
+	if(p == NULL){
+		printf("A informacao nao pode ser alterado\n");
+	}
+	else{
+		strcpy(p->info->np,np);
+	}
+}
