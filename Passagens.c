@@ -73,20 +73,27 @@ void lst_listar(Lista*l){
 	for(p=l; p!=NULL; p=p->prox){
 		 printf("| np : %s | origem: %s| destino: %s | numero : %d|\n",p->info->np,
 	p->info->origem, p->info->destino, p->info->numero);
-		//printf(" Info = %d \n", p->info->numero);
+		
 	}
 }
 
-Lista * lst_busca ( int e, Lista * l){
-	Lista * p;
-	for (p=l; p!= NULL ; p=p-> prox ){
-		if (p-> info->numero == e)
+ Lista * lst_buscar( Lista * l){
+	int e;
+ 	Lista * p;
+	printf("Digite o numero que deseja buscar:\n");
+	scanf("%d",&e);
+	//for (p=l; p!= NULL && p->info->numero != numero; p=p-> prox ){
+		for(p = l; p!=NULL; p=p->prox){
+	    if (p-> info->numero == e){
 			return p;
 	}
+}
 	return NULL ;
 }
 
-/*void lst_editar(Lista *l, int numero, char np[]){
+
+/*
+void lst_editar(Lista *l, int numero, char np[]){
 	struct lista* p = pesquisar(*l, numero);
 	if(p == NULL){
 		printf("A informacao nao pode ser alterado\n");

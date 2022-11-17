@@ -93,8 +93,8 @@ int main(void) {
      Lista * passagens_de_onibus = lst_cria();
      int cod;
      char nomep [50];
-     int elem;
-     char e[50];
+     
+ 
 
     do {
         ApresentaMenu(N_OPCOES, OPCAO1,
@@ -125,23 +125,45 @@ int main(void) {
             case OPCAO3:
                 Beep(1000,500);
                 //listar reserva
-              l_listar(lista_de_onibus );
-              lst_listar(passagens_de_onibus);
+            l_listar(lista_de_onibus );
+            lst_listar(passagens_de_onibus);
                 break;
                 
             case OPCAO4:
                 Beep(1000,500);
-                //buscar reservas
-                printf("informe o elemento que deseja buscar:\n");
-                scanf("%d", &elem);
-                lista_de_onibus = l_buscar(lista_de_onibus, elem);
-                printf("informe o elemento que deseja busca:\n");
-                scanf(" %d",& e);
-               passagens_de_onibus  = lst_busca (e, passagens_de_onibus);
+            //buscar reservas
+
+              lista_de_onibus = l_buscar(lista_de_onibus);
+		
+			if (lista_de_onibus != NULL){
+				printf("codigo: %d\n",lista_de_onibus->dado->codigo);
+				printf("vagas: %d\n",lista_de_onibus->dado->vagas);
+				printf("Origem : %s\n",lista_de_onibus->dado->origem);
+				printf("destino : %s\n",lista_de_onibus->dado->destino);
+                printf("passagens : %d\n",lista_de_onibus->dado->passagens);
+			}
+			else{
+				printf("Reserva nao encontrada\n");
+			}
+
+			passagens_de_onibus = lst_buscar(passagens_de_onibus);
+
+			if (passagens_de_onibus != NULL){
+		     	printf("nome do passageiro: %s\n",passagens_de_onibus->info->np);
+				printf("Origem : %s\n",passagens_de_onibus->info->origem);
+				printf("destino : %s\n",passagens_de_onibus->info->destino);
+                printf("numero: %d\n",passagens_de_onibus->info->numero);
+			}
+			else{
+				printf("Reserva nao encontrada\n");
+			}
+
+        
                 break;
             case OPCAO5:
                 Beep(1000,500);
-                
+            
+            
                 break;
            case OPCAO6:
                 Beep(1000,500);
