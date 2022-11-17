@@ -95,7 +95,7 @@ int main(void) {
      char nomep [50];
      int elem;
      char e[50];
-     
+
     do {
         ApresentaMenu(N_OPCOES, OPCAO1,
                       TITULO_OPCAO1, TITULO_OPCAO2,
@@ -132,10 +132,10 @@ int main(void) {
             case OPCAO4:
                 Beep(1000,500);
                 //buscar reservas
-                printf("informe o elemento que deseja buscar \n");
+                printf("informe o elemento que deseja buscar:\n");
                 scanf("%d", &elem);
                 lista_de_onibus = l_buscar(lista_de_onibus, elem);
-                printf("informe o elemento que deseja buscar \n");
+                printf("informe o elemento que deseja busca:\n");
                 scanf(" %d",& e);
                passagens_de_onibus  = lst_busca (e, passagens_de_onibus);
                 break;
