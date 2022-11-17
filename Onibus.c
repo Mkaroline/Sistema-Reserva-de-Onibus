@@ -8,7 +8,7 @@ int codigo;
 int vagas;
 char origem[50];
 char destino[50];
-char passagens[50];
+int passagens;
 };
 
 struct no{//estrutura do no ou seja com as informacoes
@@ -33,8 +33,8 @@ Onibus *r= (Onibus*)malloc(sizeof(Onibus));//alocar a memoria
 	scanf(" %[^\n]", r->origem);
     printf("Digite o destino do Cliente: ");
 	scanf(" %[^\n]", r->destino);
-    printf("Informe a passagens: ");
-	scanf(" %[^\n]", r->passagens);
+    printf("Informe o numero da passagens: ");
+	scanf(" %d", r->passagens);
 
 return r;//retorna r
 }
@@ -92,7 +92,7 @@ void l_listar(No *l){//imprimir as informacoes dado pelo usuarios
 	for(p=l; p!=NULL; p=p->prox){//p eh o primeiro elemento da lista , enquanto
 //p for difernete e igual NULL, p aponta para o proximo elemento da lista
 
-    printf("|codigo: %d |vagas: %d| origem: %s| destino:%s | passagens:%s|\n",p->dado->codigo, p->dado->vagas,
+    printf("|codigo: %d |vagas: %d| origem: %s| destino:%s | passagens:%d|\n",p->dado->codigo, p->dado->vagas,
 	p->dado->origem, p->dado->destino, p->dado->passagens);
 
 //printf("dado = %d \n", p->dado);
