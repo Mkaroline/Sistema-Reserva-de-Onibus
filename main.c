@@ -93,6 +93,9 @@ int main(void) {
      Lista * passagens_de_onibus = lst_cria();
      int cod;
      char nomep [50];
+     int elem;
+     char e[50];
+     
     do {
         ApresentaMenu(N_OPCOES, OPCAO1,
                       TITULO_OPCAO1, TITULO_OPCAO2,
@@ -113,7 +116,7 @@ int main(void) {
                 //chaamada da funcao que remo
                 printf("Digite o codigo do onibus que deseja excluir\n");
                 scanf("%d", &cod);
-                 lista_de_onibus = l_excluir(lista_de_onibus, cod);
+                lista_de_onibus = l_excluir(lista_de_onibus, cod);
                 printf("Digite o nome do passageiro que deseja excluir\n");
                 scanf(" %[^\n]", nomep);
                 passagens_de_onibus= lst_excluir(passagens_de_onibus,  nomep);
@@ -122,14 +125,19 @@ int main(void) {
             case OPCAO3:
                 Beep(1000,500);
                 //listar reserva
-                // l_listar(l);
-                // lst_listar(l);
+              l_listar(lista_de_onibus );
+              lst_listar(passagens_de_onibus);
                 break;
                 
             case OPCAO4:
                 Beep(1000,500);
                 //buscar reservas
-                //No *l_buscar(l, int elem)
+                printf("informe o elemento que deseja buscar \n");
+                scanf("%d", &elem);
+                lista_de_onibus = l_buscar(lista_de_onibus, elem);
+                printf("informe o elemento que deseja buscar \n");
+                scanf(" %d",& e);
+               passagens_de_onibus  = lst_busca (e, passagens_de_onibus);
                 break;
             case OPCAO5:
                 Beep(1000,500);

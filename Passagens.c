@@ -14,7 +14,6 @@ struct lista{
 	Lista * prox;
 };
 
-
 Passagens* preenche(void){
 	Passagens* p = (Passagens*)malloc(sizeof(Passagens));
 
@@ -24,7 +23,7 @@ Passagens* preenche(void){
 	scanf(" %[^\n]", p->origem);
 	printf("destino do passageiro:\n");
 	scanf(" %[^\n]", p->destino);
-	printf("numero do onibus");
+	printf("numero do onibus:\n");
 	scanf("%d", &p->numero);
 
 return p;
@@ -72,7 +71,9 @@ Lista* lst_excluir(Lista* l, char* np){
 void lst_listar(Lista*l){
 	Lista*p;
 	for(p=l; p!=NULL; p=p->prox){
-		printf(" Info = %d \n", p->info->numero);
+		 printf("| np : %s | origem: %s| destino: %s | numero : %d|\n",p->info->np,
+	p->info->origem, p->info->destino, p->info->numero);
+		//printf(" Info = %d \n", p->info->numero);
 	}
 }
 

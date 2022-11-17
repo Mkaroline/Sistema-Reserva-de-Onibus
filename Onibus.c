@@ -111,3 +111,4 @@ No *l_buscar(No *l, int elem){
 	}
 	return NULL;//caso nao achar o elemento
 }
+
