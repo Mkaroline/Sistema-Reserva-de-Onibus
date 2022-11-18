@@ -64,7 +64,8 @@ int LeOpcao() {
 
         if (r == 0)
         {
-            printf("\n---(Valor inserido invalido)---\n\n");
+            printf("\nOpcao invalida. Tente novamente.");
+            printf("\nA opcao deve estar entre 1 e 8. \n")
         }
 
         letra = 0;
@@ -108,7 +109,7 @@ int main(void) {
     unsigned int saida = 0;
      No * lista_de_onibus = l_cria();
      Lista * passagens_de_onibus = lst_cria();
-     int cod;
+     int cod, escolha, cont;
      char nomep [50];
      
  
@@ -125,8 +126,17 @@ int main(void) {
             case 1:
                  Beep(1000,500);
                  //fazer chamada da funcao que realizar a reserva
-                lista_de_onibus = l_insere(lista_de_onibus);
-                passagens_de_onibus =  lst_insere(passagens_de_onibus);
+                 printf("Para cadastrar onibus digite (1) \nPara cadrastrar passageiro digite (2)\n");
+                 scanf("%d", &escolha);
+                 if (escolha == 1){
+
+                    lista_de_onibus = l_insere(lista_de_onibus);
+                 }
+                 else if (escolha == 2){
+                    cont++;
+                    passagens_de_onibus =  lst_insere(passagens_de_onibus);
+                 }
+                
 				 break;
             
             case 2:
@@ -158,7 +168,7 @@ int main(void) {
 				printf("vagas do onibus: %d\n",lista_de_onibus->dado->vagas);
 				printf("origem do onibus : %s\n",lista_de_onibus->dado->origem);
 				printf("destino do onibus : %s\n",lista_de_onibus->dado->destino);
-                printf("passagens do onibus : %d\n",lista_de_onibus->dado->passagens);
+                printf("passagens do onibus : %f\n",lista_de_onibus->dado->passagens);
 			}
 			else{
 				printf("Reserva nao encontrada\n");
@@ -191,11 +201,13 @@ int main(void) {
                 break;
             case 7:
             	Beep(1000,500);
+
+                quantitativo(passagens_de_onibus);
                 break;
-            
+
             case 8:
                  saida = 1;
-                 printf("Obrigado por usar este programa");
+                 printf("Obrigado por usar este programa feito por Karoline e Raimundo");
                 break;
 
             default:

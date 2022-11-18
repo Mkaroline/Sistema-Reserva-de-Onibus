@@ -9,4 +9,4 @@ Lista* lst_excluir(Lista* l, char* np);
 void lst_listar(Lista*l);
 Lista * lst_buscar( Lista * l);
 void edita(Lista *l);
-//void disponivel(Lista *l, Onibus *p)
+void quantitativo(Lista*l);

@@ -168,7 +168,7 @@ void disponibilidade(No *l){
 	printf("Digite o destino desejado: ");//solicitar ao usuario a destino desejado
 	scanf("%s", destino);
 
-	for(p=l; p!=NULL; p=p->prox){//	
+	for(p=l; p!=NULL; p=p->prox){
 
 		strcpy(strucdestino, p -> dado -> destino);//copiar o vetor char em outra
 		retorno = strcmp(destino, strucdestino);//comparar dois vetores tipo char e retorna zero se forem iguais

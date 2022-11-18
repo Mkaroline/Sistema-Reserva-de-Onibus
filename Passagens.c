@@ -8,6 +8,7 @@ struct passagens{
 	char origem [50];
 	char destino[50];
 	int numero;
+	
 };
 struct lista{
 	Passagens* info;
@@ -114,15 +115,17 @@ void edita(Lista *l){
 		}
 	}
 }
+void quantitativo(Lista * l){
 
+Lista *p;
 
-/*
-void lst_editar(Lista *l, int numero, char np[]){
-	struct lista* p = pesquisar(*l, numero);
-	if(p == NULL){
-		printf("A informacao nao pode ser alterado\n");
-	}
-	else{
-		strcpy(p->info->np,np);
-	}
-}*/
+int cont = 0;
+
+for(p=l; p!=NULL; p =p -> prox){
+cont++;
+}
+
+printf("quantidade de passageiro eh: %d\n", cont);
+
+}
+
