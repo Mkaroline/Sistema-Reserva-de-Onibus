@@ -128,4 +128,3 @@ cont++;
 printf("quantidade de passageiro eh: %d\n", cont);
 
 }
-

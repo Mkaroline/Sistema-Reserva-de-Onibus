@@ -47,7 +47,13 @@ void LimpaBuffer(void) {
 ****/
 int LeOpcao() {
 
-    int r, ret2, n1, letra;
+    int retorno, retorno2, n1, letra;
+
+    retorno = 0 ;
+    while (retorno != 1 )
+    {
+
+        int r, ret2, n1, letra;
 
     r = 0;
     while (r != 1)
@@ -65,7 +71,7 @@ int LeOpcao() {
         if (r == 0)
         {
             printf("\nOpcao invalida. Tente novamente.");
-            printf("\nA opcao deve estar entre 1 e 8. \n")
+            printf("\nA opcao deve estar entre 1 e 8. \n");
         }
 
         letra = 0;
@@ -80,6 +86,7 @@ int LeOpcao() {
 
     return n1;
 
+}
 }
 
 /****

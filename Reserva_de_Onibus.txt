@@ -68,3 +68,8 @@ Vagas:15
 Origem do cliente:patu
 Destino do clienteinglaterra
 Valor da passagem: 34.00
+Codigo:12
+Vagas:14
+Origem do cliente:rodolfo
+Destino do clientepatu
+Valor da passagem: 56.00

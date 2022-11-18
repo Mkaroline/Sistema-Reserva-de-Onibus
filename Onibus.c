@@ -19,7 +19,7 @@ struct no{//estrutura do no ou seja com as informacoes
 
 Onibus *realizar(void){
 	
-Onibus *r= (Onibus*)malloc(sizeof(Onibus));//alocar a memoria
+Onibus *r = (Onibus*)malloc(sizeof(Onibus));
 
  if (r == NULL){
 	printf("Erro alocar a memoria \n");
@@ -46,7 +46,7 @@ Onibus *r= (Onibus*)malloc(sizeof(Onibus));//alocar a memoria
 
     fclose(arquivo); //fechando o arquivo
 
-return r; //retorna r
+return r; //retornar
 }
 
 No* l_cria(void){//cria uma lista onde nao retorna nada
@@ -131,7 +131,7 @@ void editar(No *l){//editar os dados em que usuario informou anteriomente
 	printf("Digite o codigo para busca: ");
 	scanf("%d", &elemento);
 
-	No *p;//elemento auxilar para percorrer a lista 
+	No *p;
 
 	for(p=l; p!=NULL; p=p->prox){
 		
@@ -175,7 +175,7 @@ void disponibilidade(No *l){
 		strcpy(strucorigem, p -> dado -> origem);//copiar o vetor char em outra
 		retorno2 = strcmp(origem, strucorigem);	////comparar dois vetores tipo char e retorna zero se forem iguais
 
-		if(retorno == 0 && retorno2 == 0){//condicao que serve para conferir se dois vetores retornos foram  iguais a zero
+		if(retorno == 0 && retorno2 == 0){
 
 			printf("Total de vagas disponiveis no onibus: %d\n", p -> dado -> vagas);//mostra o resultado de vagas disponivel de onibus 
 
@@ -184,5 +184,4 @@ void disponibilidade(No *l){
 	
 
 }
-
 
