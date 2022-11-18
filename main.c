@@ -136,11 +136,11 @@ int main(void) {
               lista_de_onibus = l_buscar(lista_de_onibus);
 		
 			if (lista_de_onibus != NULL){
-				printf("codigo: %d\n",lista_de_onibus->dado->codigo);
-				printf("vagas: %d\n",lista_de_onibus->dado->vagas);
-				printf("Origem : %s\n",lista_de_onibus->dado->origem);
-				printf("destino : %s\n",lista_de_onibus->dado->destino);
-                printf("passagens : %d\n",lista_de_onibus->dado->passagens);
+				printf("codigo do onibus: %d\n",lista_de_onibus->dado->codigo);
+				printf("vagas do onibus: %d\n",lista_de_onibus->dado->vagas);
+				printf("origem do onibus : %s\n",lista_de_onibus->dado->origem);
+				printf("destino do onibus : %s\n",lista_de_onibus->dado->destino);
+                printf("passagens do onibus : %d\n",lista_de_onibus->dado->passagens);
 			}
 			else{
 				printf("Reserva nao encontrada\n");
@@ -150,9 +150,9 @@ int main(void) {
 
 			if (passagens_de_onibus != NULL){
 		     	printf("nome do passageiro: %s\n",passagens_de_onibus->info->np);
-				printf("Origem : %s\n",passagens_de_onibus->info->origem);
-				printf("destino : %s\n",passagens_de_onibus->info->destino);
-                printf("numero: %d\n",passagens_de_onibus->info->numero);
+				printf("origem do passageiro : %s\n",passagens_de_onibus->info->origem);
+				printf("destino do passageiro : %s\n",passagens_de_onibus->info->destino);
+                printf("numero do onibus: %d\n",passagens_de_onibus->info->numero);
 			}
 			else{
 				printf("Reserva nao encontrada\n");
