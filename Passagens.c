@@ -17,6 +17,8 @@ struct lista{
 Passagens* preenche(void){
 	Passagens* p = (Passagens*)malloc(sizeof(Passagens));
 
+	printf("\n----Cadrastro do passageiro----\n\n");
+
 	printf("nome do passageiro:\n");
 	scanf(" %[^\n]", p->np);
 	printf("origem do passageiro:\n");
@@ -89,6 +91,28 @@ void lst_listar(Lista*l){
 	}
 }
 	return NULL ;
+}
+void edita(Lista *l){
+	int elem = 0;
+	
+	printf("Digite o numero do onibus para busca: ");
+	scanf("%d", &elem);
+
+	Lista *p;//elemento auxilar para percorrer a lista 
+
+	for(p=l; p!=NULL; p=p->prox){
+		if(p->info->numero == elem){
+			printf("reserva encontrada!\n");
+			printf("nome do passageiro:\n");
+			scanf(" %[^\n]", p->info->np);
+			printf("origem do passageiro:\n");
+			scanf(" %[^\n]", p->info->origem);
+			printf("destino do passageiro:\n");
+			scanf(" %[^\n]", p->info->destino);
+			printf("numero do onibus:\n");
+			scanf("%d", &p->info->numero);
+		}
+	}
 }
 
 

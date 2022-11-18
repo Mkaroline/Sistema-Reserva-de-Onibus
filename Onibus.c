@@ -3,12 +3,12 @@
 #include <string.h>
 #include "Onibus.h"
 
-struct onibus {//estrutura do onibus
+struct onibus { //estrutura do onibus
 int codigo;
 int vagas;
 char origem[50];
 char destino[50];
-int passagens;
+float passagens;
 };
 
 struct no{//estrutura do no ou seja com as informacoes
@@ -25,18 +25,28 @@ Onibus *r= (Onibus*)malloc(sizeof(Onibus));//alocar a memoria
 	printf("Erro alocar a memoria \n");
 	exit (1);
  }
+    printf("\n----Cadrastro do onibus----\n\n ");
     printf("Codigo do Onibus: ");
- 	scanf(" %d", &r->codigo);
+ 	scanf("%d", &r->codigo);
 	printf("A quantidade de Vagas que tem no Onibus: ");
-	scanf(" %d", &r->vagas);
-	printf("Digite a origem do Cliente: ");
+	scanf("%d", &r->vagas);
+	printf("Digite a origem do onibus: ");
 	scanf(" %[^\n]", r->origem);
-    printf("Digite o destino do Cliente: ");
+    printf("Digite o destino do onibus: ");
 	scanf(" %[^\n]", r->destino);
     printf("Informe o valor da passagens: ");
-	scanf(" %d", &r->passagens);
+	scanf("%f", &r->passagens);
 
-return r;//retorna r
+ 	FILE* arquivo = fopen("Reserva_de_Onibus.txt", "a"); //criando um arquivo
+    if(arquivo == NULL){  //compararando para ver se o arquivo é nulo
+        printf("Erro ao abrir o arquivo: "); // caso arquivo seja nulo eexibe ao usuario erro
+        return 0; //abortando o proganma
+    }
+    fprintf(arquivo,"Codigo:%d\nVagas:%d\nOrigem do cliente:%s\nDestino do cliente%s\nValor da passagem: %.2f\n", r->codigo, r->vagas, r->origem, r->destino, r->passagens); //salvando os dados do usuario dentro do arquivo
+
+    fclose(arquivo); //fechando o arquivo
+
+return r; //retorna r
 }
 
 No* l_cria(void){//cria uma lista onde nao retorna nada
@@ -92,7 +102,7 @@ void l_listar(No *l){//imprimir as informacoes dado pelo usuarios
 	for(p=l; p!=NULL; p=p->prox){//p eh o primeiro elemento da lista , enquanto
 //p for difernete e igual NULL, p aponta para o proximo elemento da lista
 
-    printf("|codigo: %d |vagas: %d| origem: %s| destino:%s | passagens:%d|\n",p->dado->codigo, p->dado->vagas,
+    printf("|codigo: %d |vagas: %d| origem: %s| destino:%s | passagens:%.2f|\n",p->dado->codigo, p->dado->vagas,
 	p->dado->origem, p->dado->destino, p->dado->passagens);
 //onde pode acessar a informacao
 	}
@@ -106,8 +116,6 @@ void l_listar(No *l){//imprimir as informacoes dado pelo usuarios
 	scanf("%d",&elem);
 
 	 No *p;//variavel auxiliar para percorrer a lista
-
-	//for(p = l; p!=NULL && p->dado->codigo != codigo; p=p->prox){//se p for igual a l entao verifica se p for diferente de NULL entao p acessa o proximo elemento da lista
 	
 	for(p = l; p!=NULL; p=p->prox){
 		if(p-> dado->codigo == elem){// verificando se dado vai ser igual a elemento
@@ -116,54 +124,65 @@ void l_listar(No *l){//imprimir as informacoes dado pelo usuarios
 	}
 	return NULL;//caso nao achar o elemento
 }
-/*
-void editar(Onubus *r){
+
+void editar(No *l){//editar os dados em que usuario informou anteriomente 
 	int elemento = 0;
+	
 	printf("Digite o codigo para busca: ");
 	scanf("%d", &elemento);
-	
-	Lista *p;
+
+	No *p;//elemento auxilar para percorrer a lista 
+
 	for(p=l; p!=NULL; p=p->prox){
-		if(p->numero == elemento){
+		
+		if(p->dado->codigo == elemento){
+
 			printf("reserva encontrada!\n");
 			printf("Codigo do onibus: ");
-			scanf(" %d", &p->codigo);
+			scanf(" %d", &p->dado->codigo);
 			printf("A quantidade de Vagas que tem no Onibus: ");
-			scanf(" %d", &p->vagas);
+			scanf(" %d", &p->dado->vagas);
 			printf("Digite a origem do cliente: ");
-			scanf(" %[^\n]", p->origem);
+			scanf(" %[^\n]", p->dado->origem);
 			printf("Digite o destino do cliente: ");
-			scanf(" %[^\n]", p->destino);
+			scanf(" %[^\n]", p->dado->destino);
 			printf("Informe o valor da passagens: ");
-			scanf(" %d", &l->passagens);
+			scanf(" %f", &p->dado->passagens);
 		}
 	}
-}*/
+}
 
+void disponibilidade(No *l){
 
+	No *p;//variavel para para percorrer a lista
 
-/*
-void editar(No *l, int codigo, char destino[]){	
-	struct No* p = l_buscar(*l, coodigo);
-	if(p == NULL){
-	printf("reserva nao encontrada\n");	
+	char destino[100];//declaracao de variavel char que vai recebe destino do usuario
+	char strucdestino[100];//variavel char para reserber destino alocado na struct
+	char origem[100];
+	char strucorigem[100];//variavel char para recebe origem alocado na struct
+    int retorno;//declaracao da variavel para recebe retorno da funcao strcmp
+	int retorno2;//declaracao da variavel para recebe retorno da funcao strcmp
+
+    printf("Digite a origem desejada: ");//solicitar ao usuario a origem desejada
+	scanf("%s", origem);
+	printf("Digite o destino desejado: ");//solicitar ao usuario a destino desejado
+	scanf("%s", destino);
+
+	for(p=l; p!=NULL; p=p->prox){//	
+
+		strcpy(strucdestino, p -> dado -> destino);//copiar o vetor char em outra
+		retorno = strcmp(destino, strucdestino);//comparar dois vetores tipo char e retorna zero se forem iguais
+		strcpy(strucorigem, p -> dado -> origem);//copiar o vetor char em outra
+		retorno2 = strcmp(origem, strucorigem);	////comparar dois vetores tipo char e retorna zero se forem iguais
+
+		if(retorno == 0 && retorno2 == 0){//condicao que serve para conferir se dois vetores retornos foram  iguais a zero
+
+			printf("Total de vagas disponiveis no onibus: %d\n", p -> dado -> vagas);//mostra o resultado de vagas disponivel de onibus 
+
+		}
 	}
-	else{
-		strcyp (p->dado->destino = destino);
-		printf("Modificacao concluida\n");
-	}
+	
+
 }
 
 
-
-/*
-void salvar_arquivo(Lista lista){
-	FILE *file = fopen ("./reserva_salvos.b", "wb");
-	struct No* p;
-	for(p = l; p != NULL ; p = p->prox){
-		fwrite(&p>dado, sizeof(Onibus), 1, file);
-	}
-	fclose(file);
-}
-
-*/

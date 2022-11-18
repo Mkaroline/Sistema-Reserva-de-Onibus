@@ -45,23 +45,40 @@ void LimpaBuffer(void) {
 *   maiorValor (entrada): o maior valor válido
 * Retorno: A opção lida é validada
 ****/
-int LeOpcao(int menorValor, int maiorValor) {
-    int op;
-    while (1) {
+int LeOpcao() {
+
+    int r, ret2, n1, letra;
+
+    r = 0;
+    while (r != 1)
+    {
+
         printf("\nDigite sua opcao: ");
-        op = getchar();
-        if (op >= menorValor && op <= maiorValor) {
-            LimpaBuffer();
-            break;
+        ret2 = scanf("%d", &n1);
+
+        if (n1 >= 1 && n1 <= 8)
+        {
+
+            r = ret2;
         }
-        else {
-            printf("\nOpcao invalida. Tente novamente.");
-            printf("\nA opcao deve estar entre %c e %c. \n",
-                   menorValor, maiorValor);
-            LimpaBuffer();
+
+        if (r == 0)
+        {
+            printf("\n---(Valor inserido invalido)---\n\n");
         }
+
+        letra = 0;
+        while (letra != '\n')
+        {
+
+            letra = getchar();
+        }
+
+        printf("\n");
     }
-    return op;
+
+    return n1;
+
 }
 
 /****
@@ -101,17 +118,18 @@ int main(void) {
                       TITULO_OPCAO1, TITULO_OPCAO2,
                       TITULO_OPCAO3, TITULO_OPCAO4,TITULO_OPCAO5, TITULO_OPCAO6,TITULO_OPCAO7,TITULO_OPCAO8);
         
-				  op = LeOpcao(OPCAO1, OPCAO1 + N_OPCOES - 1);
+				  op = LeOpcao();
         
 		switch(op) {
-            case OPCAO1:
+
+            case 1:
                  Beep(1000,500);
                  //fazer chamada da funcao que realizar a reserva
                 lista_de_onibus = l_insere(lista_de_onibus);
                 passagens_de_onibus =  lst_insere(passagens_de_onibus);
 				 break;
             
-            case OPCAO2:
+            case 2:
               Beep(1000,500);
                 //chaamada da funcao que remo
                 printf("Digite o codigo do onibus que deseja excluir\n");
@@ -122,25 +140,25 @@ int main(void) {
                 passagens_de_onibus= lst_excluir(passagens_de_onibus,  nomep);
                 break;
 
-            case OPCAO3:
+            case 3:
                 Beep(1000,500);
                 //listar reserva
             l_listar(lista_de_onibus );
             lst_listar(passagens_de_onibus);
                 break;
                 
-            case OPCAO4:
+            case 4:
                 Beep(1000,500);
             //buscar reservas
 
               lista_de_onibus = l_buscar(lista_de_onibus);
 		
 			if (lista_de_onibus != NULL){
-				printf("codigo: %d\n",lista_de_onibus->dado->codigo);
-				printf("vagas: %d\n",lista_de_onibus->dado->vagas);
-				printf("Origem : %s\n",lista_de_onibus->dado->origem);
-				printf("destino : %s\n",lista_de_onibus->dado->destino);
-                printf("passagens : %d\n",lista_de_onibus->dado->passagens);
+				printf("codigo do onibus: %d\n",lista_de_onibus->dado->codigo);
+				printf("vagas do onibus: %d\n",lista_de_onibus->dado->vagas);
+				printf("origem do onibus : %s\n",lista_de_onibus->dado->origem);
+				printf("destino do onibus : %s\n",lista_de_onibus->dado->destino);
+                printf("passagens do onibus : %d\n",lista_de_onibus->dado->passagens);
 			}
 			else{
 				printf("Reserva nao encontrada\n");
@@ -150,9 +168,9 @@ int main(void) {
 
 			if (passagens_de_onibus != NULL){
 		     	printf("nome do passageiro: %s\n",passagens_de_onibus->info->np);
-				printf("Origem : %s\n",passagens_de_onibus->info->origem);
-				printf("destino : %s\n",passagens_de_onibus->info->destino);
-                printf("numero: %d\n",passagens_de_onibus->info->numero);
+				printf("origem do passageiro : %s\n",passagens_de_onibus->info->origem);
+				printf("destino do passageiro : %s\n",passagens_de_onibus->info->destino);
+                printf("numero do onibus: %d\n",passagens_de_onibus->info->numero);
 			}
 			else{
 				printf("Reserva nao encontrada\n");
@@ -160,20 +178,22 @@ int main(void) {
 
         
                 break;
-            case OPCAO5:
+            case 5:
+
                 Beep(1000,500);
-            
+               editar(lista_de_onibus);
+               edita(passagens_de_onibus);
             
                 break;
-           case OPCAO6:
+           case 6:
                 Beep(1000,500);
-                
+                disponibilidade(lista_de_onibus);
                 break;
-            case OPCAO7:
+            case 7:
             	Beep(1000,500);
                 break;
             
-            case OPCAO8:
+            case 8:
                  saida = 1;
                  printf("Obrigado por usar este programa");
                 break;

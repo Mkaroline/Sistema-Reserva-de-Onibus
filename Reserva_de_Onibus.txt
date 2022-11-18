@@ -1,0 +1,25 @@
+Codigo:12
+Vagas:123
+Origem do cliente:madadaska
+Destino do clientebrasil
+Valor da passagem: 123.00
+Codigo:12
+Vagas:356
+Origem do cliente:s\errinha
+Destino do clientepatu
+Valor da passagem: 50.00
+Codigo:12
+Vagas:14
+Origem do cliente:serra
+Destino do clienteserrinha
+Valor da passagem: 12.00
+Codigo:123
+Vagas:123
+Origem do cliente:rodolfo
+Destino do clientefernandes
+Valor da passagem: 124.00
+Codigo:12
+Vagas:12
+Origem do cliente:1
+Destino do cliente212
+Valor da passagem: 12.00
