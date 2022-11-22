@@ -1,75 +1,25 @@
-Codigo:12
-Vagas:123
-Origem do cliente:madadaska
-Destino do clientebrasil
-Valor da passagem: 123.00
-Codigo:12
-Vagas:356
-Origem do cliente:s\errinha
-Destino do clientepatu
-Valor da passagem: 50.00
-Codigo:12
-Vagas:14
-Origem do cliente:serra
-Destino do clienteserrinha
-Valor da passagem: 12.00
-Codigo:123
-Vagas:123
-Origem do cliente:rodolfo
-Destino do clientefernandes
-Valor da passagem: 124.00
-Codigo:12
-Vagas:12
-Origem do cliente:1
-Destino do cliente212
-Valor da passagem: 12.00
-Codigo:23
-Vagas:45
-Origem do cliente:patu
-Destino do clientenatal
-Valor da passagem: 3.50
-Codigo:23
-Vagas:12
-Origem do cliente:inglaterra
-Destino do clientepotiretama
-Valor da passagem: 45.00
-Codigo:90
-Vagas:34
-Origem do cliente:patu
-Destino do clienteitau
-Valor da passagem: 50.00
-Codigo:58
-Vagas:300
-Origem do cliente:riacho
-Destino do clientemacelino viera
-Valor da passagem: 34.00
-Codigo:123
-Vagas:10
-Origem do cliente:Patu
-Destino do clienteSerrinha dos Pintos
-Valor da passagem: 23.00
-Codigo:89
-Vagas:44
-Origem do cliente:4
-Destino do cliente4
-Valor da passagem: 4.00
-Codigo:123
-Vagas:10
-Origem do cliente:patu
-Destino do clienteitau
-Valor da passagem: 100.00
-Codigo:23
-Vagas:24
-Origem do cliente:inglaterra
-Destino do clienteapodi
-Valor da passagem: 34.99
-Codigo:25
-Vagas:15
-Origem do cliente:patu
-Destino do clienteinglaterra
-Valor da passagem: 34.00
-Codigo:12
-Vagas:14
-Origem do cliente:rodolfo
-Destino do clientepatu
-Valor da passagem: 56.00
+Codigo :123
+Vagas :3
+Origem do cliente :agua nova
+ Destino do cliente :pau dos ferros
+ Valor da passagem :10.00
+Codigo :234
+Vagas :23
+Origem do cliente :serrinha
+ Destino do cliente :rodolfo
+ Valor da passagem :12.00
+Codigo :123
+Vagas :13
+Origem do cliente :patu
+ Destino do cliente :pdf
+ Valor da passagem :23.00
+Codigo :123
+Vagas :13
+Origem do cliente :an
+ Destino do cliente :pdf
+ Valor da passagem :13.00
+Codigo :12
+Vagas :13
+Origem do cliente :itau
+ Destino do cliente :serra
+ Valor da passagem :23.00

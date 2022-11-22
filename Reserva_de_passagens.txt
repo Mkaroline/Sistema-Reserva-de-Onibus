@@ -1,0 +1,21 @@
+
+nome do passagueiro :samira
+origem :aguanovense 
+Destino do cliente :pau dos ferros
+numero do onibus :2
+nome do passagueiro :karoline
+origem :serrinha
+Destino do cliente :rodolfo
+numero do onibus :1
+nome do passagueiro :samis
+origem :patu
+Destino do cliente :pdf
+numero do onibus :13
+nome do passagueiro :samis
+origem :an
+Destino do cliente :pdf
+numero do onibus :12
+nome do passagueiro :karol
+origem :itau
+Destino do cliente :serra
+numero do onibus :12
